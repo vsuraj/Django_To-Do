@@ -1,0 +1,39 @@
+{% extends 'task/base.html' %}
+<p>Add new task here</p>
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    <label for="task_title">Title: </label>
+                </td>
+                <td>
+                    <input type="text" name="task_title" id="task_title" value="{{ task_data.task_title }}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="task_discription">Discription: </label>
+                </td>
+                <td>
+                    <input type="text" name="task_discription" id="task_discription" value="{{ task_data.task_discription }}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="task_status">Status: </label>
+                </td>
+                <td>
+                    <input type="checkbox" name="task_status" id="task_status" >
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
