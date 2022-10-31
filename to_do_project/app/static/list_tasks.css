@@ -1,0 +1,62 @@
+body {
+    font-family: cursive;
+    background-image: linear-gradient(to right, rgb(69, 8, 237), rgb(240, 12, 103));
+}
+
+.list-table, th, td {
+    border: 2px solid rgba(21, 13, 13, 0.392);
+}
+
+.list-table {
+    border-radius: 18px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th:first-child {
+    border-radius: 15px 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 15px 0 0;
+}
+
+tr:last-of-type td:last-child {
+    border-radius: 0 0 15px 0;
+}
+
+tr:last-of-type td:first-child {
+    border-radius: 0 0 0 15px;
+}
+
+th {
+    background-color: rgba(245, 245, 220, 0.803);
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(229, 229, 254, 0.709);
+}
+
+tr:nth-child(odd) td {
+    background-color: rgba(211, 187, 234, 0.703);
+}
+
+.add-task-container {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 30px 20px;
+}
+
+.add-task {
+    position: fixed;
+    color: rgba(255, 255, 255, 0.715);
+    text-decoration: none;
+    padding: 3px 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(158, 147, 255, 0.436);
+    width: fit-content;
+    height: fit-content;
+}

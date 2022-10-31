@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="static/list_tasks.css">
+<div class="add-task-container">
+    <a href="{% url 'index' %}" class="add-task">Add new task</a>
+</div>
+<div class="list-table-container">
+    <table class="list-table">
+        <tr class="table-head">
+            <th>Title</th>
+            <th>Discription</th>
+            <th>Completed?</th>
+            <th>Created date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.discription }}</td>
+                {% if task.status == False %}
+                    <td><span style="color: rgb(180, 0, 36);">{{ 'Incomplete' }}</span></td>
+                {% else %}
+                    <td><span style="color: rgb(1, 123, 1);">{{ 'Completed' }}</span></td>
+                {% endif %}
+                <td>{{ task.created_date }}</td>
+                <td><a class="link" style="color: blue; text-decoration: none;" href="{% url 'edit_task' task.id %}">Edit</a></td>
+                <td><a class="link" style="color: red; text-decoration: none;" href="{% url 'delete_task' task.id %}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
